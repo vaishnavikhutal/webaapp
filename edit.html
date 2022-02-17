@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method="POST" action="/update/{{ book.id}}">
+    {% csrf_token %}
+    <table>
+        <tr><td><input name="bid" required value="{{ book.bid }}">
+        </td></tr>
+        <tr><td><input name="bname" required value="{{ book.bname }}">
+        </td></tr>
+        <tr><td><input name="bauthor" required value="{{ book.bauthor }}">
+        </td></tr>
+        <tr><td><input name="bstatus" required value="{{book.bstatus}}">
+        </td></tr>
+        <tr>
+            <td>
+                <button type="submit"> Update</button>
+            </td>
+        </tr>
+    </table>
+</form>
+{% endblock %}
